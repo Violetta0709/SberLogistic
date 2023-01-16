@@ -16,6 +16,7 @@ public class RegionalOfficesPage {
 
     public RegionalOfficesPage openPage() {
         open("/about/regions");
+        $(".cookie-popup__button").click();
         return this;
     }
 
@@ -25,7 +26,7 @@ public class RegionalOfficesPage {
     }
 
     public RegionalOfficesPage chooseCity() {
-        //$(".cookie-popup__button").click();
+        $(".cookie-popup__button").click();
         city.click();
         return this;
     }

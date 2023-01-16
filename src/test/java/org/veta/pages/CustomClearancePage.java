@@ -74,7 +74,6 @@ public class CustomClearancePage {
         confirmation.shouldHave(text(SUCCESS_TEXT));
         return this;
     }
-
 }
 
 
