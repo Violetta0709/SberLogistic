@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class OrderingFreight {
+public class OrderingFreightPage {
 
     private SelenideElement
             order = $("a[href*='/business/freight/order']"),
@@ -45,177 +45,144 @@ public class OrderingFreight {
             submit = $(byText("Оформить заявку")),
             confirmation = $("#freight_order");
 
-    private final static String TITLE_TEXT = "Заказать грузоперевозку";
-    private final static String SHIPMENT_TEXT = "Место отправки";
-    private final static String DELIVERY_TEXT = "Место доставки";
     private final static String SUCCESS_TEXT = "Успешно отправлено!";
 
-    public OrderingFreight openPage() {
+    public OrderingFreightPage openPage() {
         open("/business/freight");
         return this;
     }
 
-    public OrderingFreight orderFreight() {
+    public OrderingFreightPage orderFreight() {
         order.click();
         return this;
     }
 
-    public OrderingFreight popupClose() {
+    public OrderingFreightPage popupClose() {
         popup.click();
         return this;
     }
 
-    public OrderingFreight checkTitle1() {
-        banner.shouldHave(text(TITLE_TEXT));
-        return this;
-    }
-
-    public OrderingFreight checkTitle2() {
-        shipment.shouldHave(text(SHIPMENT_TEXT));
-        return this;
-    }
-
-    public OrderingFreight setShipmentAddress(String value) {
+    public OrderingFreightPage setShipmentAddress(String value) {
         shipmentAddress.setValue(value);
         return this;
     }
 
-    public OrderingFreight setShipmentDate(String value) {
+    public OrderingFreightPage setShipmentDate(String value) {
         shipmentDate.setValue(value);
         return this;
     }
 
-    public OrderingFreight setShipmentTime(String value) {
+    public OrderingFreightPage setShipmentTime(String value) {
         shipmentTime.setValue(value);
         return this;
     }
 
-    public OrderingFreight setShipmentCompany(String value) {
+    public OrderingFreightPage setShipmentCompany(String value) {
         shipmentCompany.setValue(value);
         return this;
     }
 
-    public OrderingFreight setShipmentPhone(String value) {
+    public OrderingFreightPage setShipmentPhone(String value) {
         shipmentPhone.setValue(value);
         return this;
     }
 
-    public OrderingFreight setShipmentName(String value) {
+    public OrderingFreightPage setShipmentName(String value) {
         shipmentName.setValue(value);
         return this;
     }
 
-    public OrderingFreight checkAddShipment() {
-        addShipment.shouldBe(visible);
-        return this;
-    }
-
-    public OrderingFreight checkTitle3() {
-        delivery.shouldHave(text(DELIVERY_TEXT));
-        return this;
-    }
-
-    public OrderingFreight setDeliveryAddress(String value) {
+    public OrderingFreightPage setDeliveryAddress(String value) {
         deliveryAddress.setValue(value);
         return this;
     }
 
-    public OrderingFreight setDeliveryDate(String value) {
+    public OrderingFreightPage setDeliveryDate(String value) {
         deliveryDate.setValue(value);
         return this;
     }
 
-    public OrderingFreight setDeliveryTime(String value) {
+    public OrderingFreightPage setDeliveryTime(String value) {
         deliveryTime.setValue(value);
         return this;
     }
 
-    public OrderingFreight setDeliveryCompany(String value) {
+    public OrderingFreightPage setDeliveryCompany(String value) {
         deliveryCompany.setValue(value);
         return this;
     }
 
-    public OrderingFreight setDeliveryPhone(String value) {
+    public OrderingFreightPage setDeliveryPhone(String value) {
         deliveryPhone.setValue(value);
         return this;
     }
 
-    public OrderingFreight setDeliveryName(String value) {
+    public OrderingFreightPage setDeliveryName(String value) {
         deliveryName.setValue(value);
         return this;
     }
 
-    public OrderingFreight checkAddDelivery() {
-        addDelivery.shouldBe(visible);
-        return this;
-    }
-
-    public OrderingFreight setCargoDescription(String value) {
+    public OrderingFreightPage setCargoDescription(String value) {
         cargo.setValue(value);
         return this;
     }
 
-    public OrderingFreight selectPackType(String value) {
+    public OrderingFreightPage selectPackType(String value) {
         packType.selectOptionByValue(value);
         return this;
     }
 
-    public OrderingFreight setCargoQty(String value) {
+    public OrderingFreightPage setCargoQty(String value) {
         cargoQty.setValue(value);
         return this;
     }
 
-    public OrderingFreight setCargoWeight(String value) {
+    public OrderingFreightPage setCargoWeight(String value) {
         cargoWeight.setValue(value);
         return this;
     }
 
-    public OrderingFreight setCargoVolume(String value) {
+    public OrderingFreightPage setCargoVolume(String value) {
         cargoVolume.setValue(value);
         return this;
     }
 
-    public OrderingFreight checkAddCargo() {
-        addCargo.shouldBe(visible);
-        return this;
-    }
-
-    public OrderingFreight selectTransportCapacity(String value) {
+    public OrderingFreightPage selectTransportCapacity(String value) {
         transportCapacity.selectOptionByValue(value);
         return this;
     }
 
-    public OrderingFreight selectTransportType(String value) {
+    public OrderingFreightPage selectTransportType(String value) {
         transportType.selectOption(value);
         return this;
     }
 
-    public OrderingFreight selectTransportLoadType(String value) {
+    public OrderingFreightPage selectTransportLoadType(String value) {
         transportLoadType.selectOption(value);
         return this;
     }
 
-    public OrderingFreight checkExtraEquip() {
+    public OrderingFreightPage checkExtraEquip() {
         additionalEquip.click();
         return this;
     }
 
-    public OrderingFreight setDesiredCost(String value) {
+    public OrderingFreightPage setDesiredCost(String value) {
         desiredCost.setValue(value);
         return this;
     }
 
-    public OrderingFreight checkDocReturn() {
+    public OrderingFreightPage checkDocReturn() {
         docReturn.click();
         return this;
     }
 
-    public OrderingFreight clickSubmit() {
+    public OrderingFreightPage clickSubmit() {
         submit.click();
         return this;
     }
 
-    public OrderingFreight checkResult() {
+    public OrderingFreightPage checkResult() {
         confirmation.shouldHave(text(SUCCESS_TEXT));
         return this;
     }

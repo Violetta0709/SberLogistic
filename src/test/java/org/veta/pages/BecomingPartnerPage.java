@@ -3,11 +3,10 @@ package org.veta.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class BecomingPartner {
+public class BecomingPartnerPage {
 
     private SelenideElement
             title = $("h1"),
@@ -26,63 +25,63 @@ public class BecomingPartner {
     private final static String PICKUPNET = "Сеть партнерских пунктов выдачи заказов";
     private final static String THANKS_TEXT = "Спасибо за обращение!";
 
-    public BecomingPartner openPage() {
+    public BecomingPartnerPage openPage() {
         open("https://sblogistica.ru/partners/");
         return this;
     }
 
-    public BecomingPartner checkTitle() {
+    public BecomingPartnerPage checkTitle() {
         title.shouldHave(text(TITLE_TEXT));
         return this;
     }
 
-    public BecomingPartner connect() {
+    public BecomingPartnerPage clickConnectButton() {
         connectButton.click();
         return this;
     }
 
-    public BecomingPartner checkPickup() {
+    public BecomingPartnerPage checkPickup() {
         pickUp.shouldHave(text(PICKUPNET));
         return this;
     }
 
-    public BecomingPartner becomePartner() {
+    public BecomingPartnerPage becomePartner() {
         intro.click();
         return this;
     }
 
-    public BecomingPartner setUserName(String value) {
+    public BecomingPartnerPage setUserName(String value) {
         userName.setValue(value);
         return this;
     }
 
-    public BecomingPartner setNumber(String value) {
+    public BecomingPartnerPage setNumber(String value) {
         userPhone.setValue(value);
         return this;
     }
 
-    public BecomingPartner setCity(String value) {
+    public BecomingPartnerPage setCity(String value) {
         userCity.setValue(value);
         return this;
     }
 
-    public BecomingPartner setEmail(String value) {
+    public BecomingPartnerPage setEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
 
-    public BecomingPartner setAddress(String value) {
+    public BecomingPartnerPage setAddress(String value) {
         address.setValue(value);
         return this;
     }
 
-    public BecomingPartner clickSubmit() {
+    public BecomingPartnerPage clickSubmit() {
         submit.click();
         return this;
     }
 
-    public BecomingPartner checkResult() {
+    public BecomingPartnerPage checkResult() {
         confirmation.shouldHave(text(THANKS_TEXT));
         return this;
     }

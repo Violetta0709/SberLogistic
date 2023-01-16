@@ -2,11 +2,10 @@ package org.veta.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class UserAgreement {
+public class UserAgreementPage {
 
     private SelenideElement
             link = $("a[href*='https://sberlogistics.ru/uploads/documents/Пользовательское_соглашение.pdf']");
@@ -19,7 +18,7 @@ public class UserAgreement {
         this.link = link;
     }
 
-    public UserAgreement openPage() {
+    public UserAgreementPage openPage() {
         open("/about/documents/terms_of_use");
         return this;
     }

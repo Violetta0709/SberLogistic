@@ -1,12 +1,11 @@
 package org.veta.pages;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TrackingParcel {
+public class TrackingParcelPage {
 
     private SelenideElement
             parcelNumber =  $("[name=number]"),
@@ -17,22 +16,22 @@ public class TrackingParcel {
     private final static String PICKUPNET = "Сеть партнерских пунктов выдачи заказов";
     private final static String THANKS_TEXT = "Спасибо за обращение!";
 
-    public TrackingParcel openPage() {
+    public TrackingParcelPage openPage() {
         open("https://sblogistica.ru");
         return this;
     }
 
-    public TrackingParcel setTrackingNumber(String value) {
+    public TrackingParcelPage setTrackingNumber(String value) {
         parcelNumber.setValue(value);
         return this;
     }
 
-    public TrackingParcel clickSubmit() {
+    public TrackingParcelPage clickSubmit() {
         submit.click();
         return this;
     }
 
-    public TrackingParcel checkResult() {
+    public TrackingParcelPage checkResult() {
         information.shouldHave(text("Информация о посылке"))
                 .shouldHave(text("Получатель"))
                 .shouldHave(text("Вес"))

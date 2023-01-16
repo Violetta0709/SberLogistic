@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class CustomClearance {
+public class CustomClearancePage {
 
     private SelenideElement
             title = $(".landing-banner"),
@@ -24,53 +24,53 @@ public class CustomClearance {
     private final static String TITLE_TEXT = "Услуги по таможенному оформлению";
     private final static String SUCCESS_TEXT = "Успешно отправлено!";
 
-    public CustomClearance openPage() {
+    public CustomClearancePage openPage() {
         open("https://sblogistica.ru/international/");
         return this;
     }
 
-    public CustomClearance checkTitle() {
+    public CustomClearancePage checkTitle() {
         title.shouldHave(text(TITLE_TEXT));
         return this;
     }
 
-    public CustomClearance makeApplication() {
+    public CustomClearancePage makeApplication() {
         application.click();
         return this;
     }
 
-    public CustomClearance checkForm() {
+    public CustomClearancePage checkForm() {
         form.shouldBe(visible);
         return this;
     }
 
-    public CustomClearance setUserName(String value) {
+    public CustomClearancePage setUserName(String value) {
         userName.setValue(value);
         return this;
     }
 
-    public CustomClearance setNumber(String value) {
+    public CustomClearancePage setNumber(String value) {
         userPhone.setValue(value);
         return this;
     }
 
-    public CustomClearance setEmail(String value) {
+    public CustomClearancePage setEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
-    public CustomClearance uploadFile(String value) {
+    public CustomClearancePage uploadFile(String value) {
         upload.uploadFromClasspath(value);
         return this;
     }
 
 
-    public CustomClearance clickSubmit() {
+    public CustomClearancePage clickSubmit() {
         submit.click();
         return this;
     }
 
-    public CustomClearance checkResult() {
+    public CustomClearancePage checkResult() {
         confirmation.shouldHave(text(SUCCESS_TEXT));
         return this;
     }

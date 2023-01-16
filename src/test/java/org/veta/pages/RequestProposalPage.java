@@ -1,13 +1,12 @@
 package org.veta.pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-public class RequestProposal {
+public class RequestProposalPage {
 
     private SelenideElement
             proposalGet = $(byText("Получить предложение")),
@@ -19,38 +18,38 @@ public class RequestProposal {
 
     private final static String BYE_TEXT = "Ваше сообщение отправлено!";
 
-    public RequestProposal openPage() {
+    public RequestProposalPage openPage() {
         open("/online_stores");
         $(".cookie-popup__button").click();
         return this;
     }
 
-    public RequestProposal askProposal() {
+    public RequestProposalPage askProposal() {
         proposalGet.click();
         return this;
     }
 
-    public RequestProposal setUserName(String value) {
+    public RequestProposalPage setUserName(String value) {
         userName.setValue(value);
         return this;
     }
 
-    public RequestProposal setNumber(String value) {
+    public RequestProposalPage setNumber(String value) {
         userPhone.setValue(value);
         return this;
     }
 
-    public RequestProposal setEmail(String value) {
+    public RequestProposalPage setEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
-    public RequestProposal clickSubmit() {
+    public RequestProposalPage clickSubmit() {
         leadForm.click();
         return this;
     }
 
-    public RequestProposal checkResult() {
+    public RequestProposalPage checkResult() {
         confirmBlock.shouldHave(text(BYE_TEXT));
         return this;
     }
