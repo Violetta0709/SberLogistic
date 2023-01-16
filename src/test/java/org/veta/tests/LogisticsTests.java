@@ -22,7 +22,6 @@ public class LogisticsTests extends TestBase {
     TrackingParcelPage tracking = new TrackingParcelPage();
     UserAgreementPage content = new UserAgreementPage();
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Request proposal for business")
@@ -42,7 +41,6 @@ public class LogisticsTests extends TestBase {
         });
     }
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Checking info about regional offices")
@@ -59,7 +57,6 @@ public class LogisticsTests extends TestBase {
         });
     }
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Becoming partner")
@@ -84,7 +81,6 @@ public class LogisticsTests extends TestBase {
         });
     }
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Ordering custom clearance services")
@@ -115,7 +111,6 @@ public class LogisticsTests extends TestBase {
             freight.openPage()
                     .orderFreight();
                     //.popupClose();
-
         });
         step("Filling form", () -> {
             freight.setShipmentAddress(address)
@@ -148,7 +143,6 @@ public class LogisticsTests extends TestBase {
         });
     }
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Check user agreement content")
@@ -159,7 +153,6 @@ public class LogisticsTests extends TestBase {
         assertThat(pdf.text).contains(info);
     }
 
-    @Disabled
     @Test
     @Owner("Veta")
     @DisplayName("Tracking parcel")
