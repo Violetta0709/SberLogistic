@@ -1,23 +1,23 @@
 
-# Проект по автоматизации тестирования сайта Сберлогистика 
+# Automated tests for SberLogistics project
 <p align="left">
-<img src="images/bannersber.png" width="1050" height="300" > 
+<img src="images/bannersber.png" width="800" height="250" > 
 </p>
 
 <a target="_blank" href="https://sberlogistics.ru/">sberlogistics.ru</a>
-## :white_square_button: Содержание:
+## :white_square_button: Content:
 
-- [Технологии и инструменты](#earth_africa-технологии-и-инструменты)
-- [Реализованные проверки](#earth_africa-Реализованные-проверки)
-- [Сборка в Jenkins](#earth_africa-Jenkins-job)
-- [Allure отчет](#earth_africa-Allure-отчет)
-- [Интеграция с Allure TestOps](#earth_africa-Интеграция-с-Allure-TestOps)
-- [Уведомление в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
-- [Видео прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
+- [Tools and technologies](#earth_africa-технологии-и-инструменты)
+- [Implemented tests](#earth_africa-Реализованные-проверки)
+- [Tests run with Jenkins](#earth_africa-Jenkins-job)
+- [Allure report](#earth_africa-Allure-отчет)
+- [Integration with Allure TestOps](#earth_africa-Интеграция-с-Allure-TestOps)
+- [Telegram notifications](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
+- [Tests implementation vieo](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
-## :white_square_button: Технологии и инструменты
+## :white_square_button: Tools and technologies
 
-<p align="center">
+<p align="left">
 <a href="https://www.jetbrains.com/idea/"><img src="images/idea.png" width="50" height="50"  alt="IDEA"/></a>
 <a href="https://www.java.com/"><img src="images/java.png" width="50" height="50"  alt="Java"/></a>
 <a href="https://github.com/"><img src="images/github.png" width="50" height="50"  alt="Github"/></a>
@@ -29,40 +29,40 @@
 <a href="https://www.jenkins.io/"><img src="images/jenkins.png" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
-## :white_square_button: Реализованные проверки
+## :white_square_button: Implemented tests
 
-- ✓ Проверка отправки формы заказа услуг по таможенному оформлению;
-- ✓ Проверка отслеживания статуса отправлений;
-- ✓ Проверка отправки формы запроса сотрудничества;
-- ✓ Проверка отправки формы "Стать партнером";
-- ✓ Проверка корректности содержания опубликованного пользователького соглашения;
-- ✓ Проверка информации в разделе "Региональные офисы";
-- ✓ Проверка отправки формы "Оформить доставку".
+- ✓ Checking form of ordering custom clearance services;
+- ✓ Checking tracking status of parcels;
+- ✓ Checking sending form of cooperation request;
+- ✓ Checking sending form "To become a partner";
+- ✓ Checking user agreement content;
+- ✓ Checking "Regional offices" information;
+- ✓ Checking sending form "Ordering freight".
 
 
 ## <img src="images/jenkins.png" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
-<a target="_blank" href="https://jenkins.autotests.cloud/job/Logistics/">Сборка в Jenkins</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/Logistics/">Tests run with Jenkins</a>
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/Logistics/"><img src="images/jenkinsjob.jpg" alt="Jenkins"/></a>
 </p>
 
-### Параметры сборки в Jenkins:
+### Jenkins parameters:
 
-- browser (браузер, по умолчанию chrome)
-- browserVersion (версия браузера)
-- browserSize (размер окна браузера, по умолчанию 1920x1080)
-- remoteDriverUrl (логин, пароль и адрес удаленного сервера selenoid)
-- videoStorage (адрес, по которому можно получить видео)
+- browser (chrome by default)
+- browserVersion
+- browserSize (1920x1080 by default)
+- remoteDriverUrl (login, password and address of remote selenoid server)
+- videoStorage (address to get video)
 
 
-## :white_square_button: Запуск тестов из терминала
+## :white_square_button: Launching tests with terminal
 
-Локальный запуск:
+Local launching:
 ```bash
 gradle clean test
 ```
 
-## :white_square_button: Удаленный запуск:
+## :white_square_button: Remote launching:
 ```bash
 clean
 test
@@ -73,41 +73,41 @@ test
 -DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
 ```
 
-## <img src="images/allure.png" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/Logistics/allure/">Allure report</a>
+## <img src="images/allure.png" width="25" height="25"  alt="Allure"/></a> Report <a target="_blank" href="https://jenkins.autotests.cloud/job/Logistics/allure/">Allure report</a>
 
-### Основное окно
+### Dashboard
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/allurereport.jpg">
 </p>
 
-### Тесты
+### Tests
 
 <p align="center">
 <img title="Allure Tests" src="images/testscreen.jpg">
 </p>
 
-### Графики прохождения тестов
+### Tests implementation graphs
 
 <p align="center">
 <img title="Allure Graphics" src="images/graphs.jpg">
 </p>
 
-## <img src="images/allure_testopslogo.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с Allure TestOps
+## <img src="images/allure_testopslogo.svg" width="25" height="25"  alt="Allure"/></a>Integration with Allure TestOps
 
-### Дашборд
+### Dashboard
 
 <p align="center">
 <img title="Allure TestOps Dashboard" src="images/testops.jpg">
 </p>
 
-### Тест-кейсы
+### Test cases
 
 <p align="center">
 <img title="Allure TestOps Tests" src="images/testops1.jpg">
 </p>
 
-## <img src="images/telegram.png" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram с результатами тестов
+## <img src="images/telegram.png" width="25" height="25"  alt="Allure"/></a> Telegram tests results notifications
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/telegram_notifications.jpg">
@@ -115,7 +115,7 @@ test
 
 
 
-### <img src="images/selenoid.png" width="25" height="25"  alt="Allure"/></a> Видео прохождения тестов
+### <img src="images/selenoid.png" width="25" height="25"  alt="Allure"/></a> Video of tests implementation
 
 <p align="center">
 <img title="Selenoid Video" src="images/video_tests.gif" width="950" height="550"  alt="video"> </p>
